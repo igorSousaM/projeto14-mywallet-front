@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { StyledMain } from "./SignInStyle"
 
 export default function SignInPage() {
@@ -9,7 +10,9 @@ export default function SignInPage() {
                 <input placeholder="Senha" />
                 <button>Entrar</button>
             </form>
+            <Link to={"/SignUp"}>
             <p>Primeira vez? Cadastre-se!</p>
+            </Link>
         </StyledMain>
     )
 }

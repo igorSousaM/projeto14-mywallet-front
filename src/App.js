@@ -4,18 +4,22 @@ import OutcomePage from "./OutComePage";
 import MainPage from "./Pages/MainPage";
 import SignInPage from "./Pages/SingInPage/SignInPage";
 import SignUpPage from "./Pages/SignUpPage/SignUpPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
     <GlobalStyle/>
-      {/* <SignInPage /> */}
-      <SignUpPage />
+    <Routes>
+      <Route path="/SignIn" element={<SignInPage />}/>
+      <Route path="/SignUp" element={<SignUpPage />}/>
+      
       {/* <MainPage />
       <IncomePage />
       <OutcomePage /> */}
-    </>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
