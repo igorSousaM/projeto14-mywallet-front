@@ -33,8 +33,7 @@ header{
     }
 
     div{
-        margin-right: 25px;
-        width: 24px;
+        margin-right:25px;
     }
 }
 
