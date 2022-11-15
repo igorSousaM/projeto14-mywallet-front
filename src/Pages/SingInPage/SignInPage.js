@@ -8,7 +8,10 @@ export default function SignInPage() {
             <form>
                 <input placeholder="E-mail" />
                 <input placeholder="Senha" />
+                <Link to={"/finances"}>
                 <button>Entrar</button>
+                </Link>
+                
             </form>
             <Link to={"/SignUp"}>
             <p>Primeira vez? Cadastre-se!</p>

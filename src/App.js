@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import IncomePage from "./IncomePage";
-import OutcomePage from "./OutComePage";
-import MainPage from "./Pages/MainPage";
+// import IncomePage from "./IncomePage";
+// import OutcomePage from "./OutComePage";
+import FinancesPage from "./Pages/FinancesPage/FinancesPage";
 import SignInPage from "./Pages/SingInPage/SignInPage";
 import SignUpPage from "./Pages/SignUpPage/SignUpPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -12,11 +12,11 @@ function App() {
     <BrowserRouter>
     <GlobalStyle/>
     <Routes>
-      <Route path="/SignIn" element={<SignInPage />}/>
+      <Route path="/" element={<SignInPage />}/>
       <Route path="/SignUp" element={<SignUpPage />}/>
+      <Route path="/finances" element={<FinancesPage />}/>
       
-      {/* <MainPage />
-      <IncomePage />
+      {/*  <IncomePage />
       <OutcomePage /> */}
     </Routes>
     </BrowserRouter>

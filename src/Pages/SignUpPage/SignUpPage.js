@@ -12,7 +12,7 @@ export default function SignUpPage() {
                 <input placeholder="Confirme a senha" />
                 <button>Cadastrar</button>
             </form>
-            <Link to={"/SignIn"}>
+            <Link to={"/"}>
                 <p>Já tem uma conta? Entre agora!</p>
             </Link>
 
