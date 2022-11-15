@@ -3,16 +3,16 @@ import IncomePage from "./IncomePage";
 import OutcomePage from "./OutComePage";
 import MainPage from "./Pages/MainPage";
 import SignInPage from "./Pages/SingInPage/SignInPage";
-import SignUpPage from "./Pages/SignUpPage";
+import SignUpPage from "./Pages/SignUpPage/SignUpPage";
 
 
 function App() {
   return (
     <>
     <GlobalStyle/>
-      <SignInPage />
-      {/* <SignUpPage />
-      <MainPage />
+      {/* <SignInPage /> */}
+      <SignUpPage />
+      {/* <MainPage />
       <IncomePage />
       <OutcomePage /> */}
     </>

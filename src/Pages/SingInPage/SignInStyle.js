@@ -65,9 +65,6 @@ export const StyledMain = styled.main`
 
 
     p{
-        width: 191px;
-        height: 18px;
-
         margin-top: 36px;
 
         font-family: 'Raleway';

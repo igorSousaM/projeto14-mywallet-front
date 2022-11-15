@@ -1,4 +1,4 @@
-import { StyledMain } from "./style"
+import { StyledMain } from "./SignInStyle"
 
 export default function SignInPage() {
     return (
@@ -9,7 +9,7 @@ export default function SignInPage() {
                 <input placeholder="Senha" />
                 <button>Entrar</button>
             </form>
-            <p>Primeira vez? Cadastre-se</p>
+            <p>Primeira vez? Cadastre-se!</p>
         </StyledMain>
     )
 }
