@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
- import IncomePage from "./IncomePage/IncomePage";
-// import OutcomePage from "./OutComePage";
+import IncomePage from "./IncomePage/IncomePage";
+import OutcomePage from "./OutcomePage/OutcomePage";
 import FinancesPage from "./Pages/FinancesPage/FinancesPage";
 import SignInPage from "./Pages/SingInPage/SignInPage";
 import SignUpPage from "./Pages/SignUpPage/SignUpPage";
@@ -16,9 +16,7 @@ function App() {
       <Route path="/SignUp" element={<SignUpPage />}/>
       <Route path="/finances" element={<FinancesPage />}/>
       <Route path="/income" element={<IncomePage />}/>
-      
-      {/*  
-      <OutcomePage /> */}
+      <Route path="/income" element={<OutcomePage />}/>
     </Routes>
     </BrowserRouter>
   );
