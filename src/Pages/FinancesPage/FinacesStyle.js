@@ -23,7 +23,7 @@ header{
     h1{
         margin-left: 25px;
 
-        font-family: 'Raleway';
+        font-family: 'Raleway',sans-serif;
         font-style: normal;
         font-weight: 700;
         font-size: 26px;
@@ -73,7 +73,7 @@ footer{
             width: 64px;
             height: 40px;
 
-            font-family: 'Raleway';
+            font-family: 'Raleway',sans-serif;
             font-style: normal;
             font-weight: 700;
             font-size: 17px;

@@ -23,11 +23,15 @@ export default function MainPage() {
             <footer>
                 <button>
                     <IoIosAddCircleOutline size={"22px"} color="white" />
-                    <p>Nova entrada</p>
+                    <Link to="/income">
+                        <p>Nova entrada</p>
+                    </Link>
                 </button>
                 <button>
                     <IoIosAddCircleOutline size={"22px"} color="white" />
-                    <p>Nova saída</p>
+                    <Link to="/income">
+                        <p>Nova saída</p>
+                    </Link>
                 </button>
             </footer>
         </StyledScreen>

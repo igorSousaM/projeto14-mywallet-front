@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-// import IncomePage from "./IncomePage";
+ import IncomePage from "./IncomePage/IncomePage";
 // import OutcomePage from "./OutComePage";
 import FinancesPage from "./Pages/FinancesPage/FinancesPage";
 import SignInPage from "./Pages/SingInPage/SignInPage";
@@ -15,8 +15,9 @@ function App() {
       <Route path="/" element={<SignInPage />}/>
       <Route path="/SignUp" element={<SignUpPage />}/>
       <Route path="/finances" element={<FinancesPage />}/>
+      <Route path="/income" element={<IncomePage />}/>
       
-      {/*  <IncomePage />
+      {/*  
       <OutcomePage /> */}
     </Routes>
     </BrowserRouter>
