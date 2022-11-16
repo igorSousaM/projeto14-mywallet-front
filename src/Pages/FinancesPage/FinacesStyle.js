@@ -38,7 +38,7 @@ header{
 }
 
 main{
-    width: 90%;
+    width: 326px;
     height: 446px;
 
     margin-bottom: 13px;
@@ -48,7 +48,7 @@ main{
 }
 
 footer{
-    width: 90%;
+    width: 326px;
 
 
     display: flex;

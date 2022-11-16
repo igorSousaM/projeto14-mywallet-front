@@ -29,7 +29,7 @@ export default function MainPage() {
                 </button>
                 <button>
                     <IoIosAddCircleOutline size={"22px"} color="white" />
-                    <Link to="/income">
+                    <Link to="/outcome">
                         <p>Nova saída</p>
                     </Link>
                 </button>

@@ -4,13 +4,13 @@ export default function OutcomePage(params) {
     return (
         <StyledMain>
             <header>
-                <h1>Nova entrada</h1>
+                <h1>Nova saída</h1>
             </header>
             <main>
                 <form>
                     <input placeholder="Valor" />
                     <input placeholder="Descrição" />
-                    <button>Salvar entrada</button>
+                    <button>Salvar saída</button>
                 </form>
             </main>
         </StyledMain>
