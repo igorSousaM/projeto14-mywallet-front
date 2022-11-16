@@ -15,7 +15,9 @@ export default function OutcomePage(params) {
                 <form>
                     <input placeholder="Valor" />
                     <input placeholder="Descrição" />
-                    <button>Salvar saída</button>
+                    <Link to="/finances">
+                        <button>Salvar saída</button>
+                    </Link>
                 </form>
             </main>
         </StyledMain>
