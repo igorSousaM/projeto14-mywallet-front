@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import IncomePage from "./IncomePage/IncomePage";
-import OutcomePage from "./OutcomePage/OutcomePage";
+import IncomePage from "./Pages/IncomePage/IncomePage";
+import OutcomePage from "./Pages/OutcomePage/OutcomePage";
 import FinancesPage from "./Pages/FinancesPage/FinancesPage";
 import SignInPage from "./Pages/SingInPage/SignInPage";
 import SignUpPage from "./Pages/SignUpPage/SignUpPage";
