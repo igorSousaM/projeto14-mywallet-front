@@ -6,7 +6,7 @@ export default function SignInPage() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    let navigate = useNavigate()
+    const navigate = useNavigate()
 
     function login(e){
 
@@ -27,8 +27,8 @@ export default function SignInPage() {
         <StyledMain>
             <h1>MyWallet</h1>
             <form onSubmit={login}>
-                <input required type="text" placeholder="E-mail" onChange={e => setEmail(e.target.value)}/>
-                <input required type="password" placeholder="Senha" onChange={e => setPassword(e.target.value)}/>
+                <input required value={email} type="text" placeholder="E-mail" onChange={e => setEmail(e.target.value)}/>
+                <input required value={password} type="password" placeholder="Senha" onChange={e => setPassword(e.target.value)}/>
                 <button type="submit">Entrar</button>                
             </form>
             <Link to={"/SignUp"}>
