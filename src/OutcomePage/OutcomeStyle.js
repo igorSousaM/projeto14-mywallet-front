@@ -17,6 +17,11 @@ export const StyledMain = styled.div`
         margin-top: 25px;
         margin-bottom:40px;
 
+        display: flex;
+        justify-content: space-between;
+        align-items : center;
+
+
         h1{  
 
             font-family: 'Raleway',sans-serif;
