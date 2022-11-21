@@ -8,6 +8,7 @@ import Transaction from "./Transaction";
 
 export default function MainPage({ userData }) {
   const [transactionList, setTransactionList] = useState([]);
+  const [transactionDeleted, setTransactionDeleted] = useState(false);
 
   const config = {
     headers: { Authorization: `Bearer ${userData.token.token}` },
@@ -22,7 +23,7 @@ export default function MainPage({ userData }) {
       .catch((err) => {
         console.log(err.response.data);
       });
-  }, []);
+  }, [transactionDeleted]);
 
   const navigate = useNavigate();
 
@@ -48,11 +49,16 @@ export default function MainPage({ userData }) {
     navigate(`/${str}`);
   }
 
-  let entradas = 0
-  let saidas = 0
-  let saldo = entradas - saidas
+  let entradas = 0;
+  let saidas = 0;
+  let saldo = entradas - saidas;
 
-  transactionList !== undefined && transactionList.map((i,idx)=> i.type === "outcome"? entradas += Number(i.value) : saidas += Number(i.value))
+  transactionList !== undefined &&
+    transactionList.map((i, idx) =>
+      i.type === "outcome"
+        ? (entradas += Number(i.value))
+        : (saidas += Number(i.value))
+    );
 
   return (
     <StyledScreen isPositive={saldo > 0}>
@@ -66,7 +72,13 @@ export default function MainPage({ userData }) {
       <main>
         {transactionList !== undefined &&
           transactionList.map((i, idx) => (
-            <Transaction key={idx} transactionInfo={i} userData={userData}/>
+            <Transaction
+              key={idx}
+              transactionInfo={i}
+              userData={userData}
+              setTransactionDeleted={setTransactionDeleted}
+              transactionDeleted={transactionDeleted}
+            />
           ))}
 
         <div className="overview">

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-export default function Transaction({ transactionInfo, userData }) {
+export default function Transaction({ transactionInfo, userData, setTransactionDeleted,transactionDeleted }) {
   let navigate = useNavigate();
   
 
@@ -14,6 +14,7 @@ export default function Transaction({ transactionInfo, userData }) {
     axios
       .delete(`http://localhost:5000/transaction/${id}`, config)
       .then((res) => {
+        setTransactionDeleted(!transactionDeleted)
         console.log(res.data);
       })
       .catch((err) => console.log(err.response.data));
