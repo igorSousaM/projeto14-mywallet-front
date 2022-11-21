@@ -7,12 +7,15 @@ export default function SignInPage({setUserData}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [loadingState, setLoadingState] = useState(false)
 
   const navigate = useNavigate();
 
   function login(e) {
     e.preventDefault();
     e.stopPropagation();
+
+    setLoadingState(true)
 
     const body = {
       email,
@@ -22,12 +25,14 @@ export default function SignInPage({setUserData}) {
     axios.post("http://localhost:5000/sign-in", body)
       .then(res => {
         setUserData(res.data)
+        setLoadingState(false)
         navigate("/finances")
 
       }).catch((err) => {
         console.log(err)
         alert("email ou senha incorreto")
-    });
+        setLoadingState(false)
+      });
 
   }
 
@@ -35,21 +40,21 @@ export default function SignInPage({setUserData}) {
     <StyledMain>
       <h1>MyWallet</h1>
       <form onSubmit={login}>
-        <input
+        <input disabled={loadingState}
           required
           value={email}
           type="text"
           placeholder="E-mail"
           onChange={(e) => setEmail(e.target.value)}
         />
-        <input
+        <input disabled={loadingState}
           required
           value={password}
           type="password"
           placeholder="Senha"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Entrar</button>
+        <button disabled={loadingState} type="submit">{!loadingState ? "Entrar" : "Aguarde ..."}</button>
       </form>
       <Link to={"/SignUp"}>
         <p>Primeira vez? Cadastre-se!</p>

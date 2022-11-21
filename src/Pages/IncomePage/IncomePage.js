@@ -1,6 +1,6 @@
 import { StyledMain } from "./IncomeStyle"
 import { RiArrowGoBackFill } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
@@ -9,6 +9,7 @@ export default function IncomePage({userData}) {
 
     const [value, setValue] = useState(0)
     const [description, setDescription] = useState("")
+    const navigate = useNavigate()
 
     function completeForm(e){
         e.preventDefault()
@@ -28,6 +29,7 @@ export default function IncomePage({userData}) {
             console.log(res.data)
             setValue(0)
             setValue("")
+            navigate("/finances")
         })
         .catch(err=>console.log(err.response.data))
 

@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 export default function Transaction({ transactionInfo, userData }) {
   let navigate = useNavigate();
+  
 
   const config = {
     headers: { Authorization: `Bearear ${userData.token.token}` },
@@ -18,11 +19,11 @@ export default function Transaction({ transactionInfo, userData }) {
       .catch((err) => console.log(err.response.data));
   }
 
-  function updateTransaction(type) {
+  function updateTransaction(type,id) {
     if (type === "outcome") {
-      navigate("/updateOutcome");
+      navigate("/updateOutcome",{state: id});
     } else {
-      navigate("/updateIncome");
+      navigate("/updateIncome",{state:id});
     }
   }
 
@@ -31,7 +32,7 @@ export default function Transaction({ transactionInfo, userData }) {
       <p className="time">{transactionInfo.date}</p>
       <p
         className="description"
-        onClick={() => updateTransaction(transactionInfo.type)}
+        onClick={() => updateTransaction(transactionInfo.type, transactionInfo._id)}
       >
         {transactionInfo.description}
       </p>

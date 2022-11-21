@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { StyledMain } from "./SignUptyle";
 import axios from "axios";
 
-
 export default function SignUpPage() {
 
     const [name, setName] = useState("")
@@ -49,7 +48,7 @@ export default function SignUpPage() {
                 <input  disabled={loadingState} required type="email" value={email} placeholder="E-mail" onChange={e=>setEmail(e.target.value)}/>
                 <input  disabled={loadingState} required type="password" value={password} placeholder="Senha" onChange={e=>setPassword(e.target.value)}/>
                 <input  disabled={loadingState} required type="password" value={passwordConfirm} placeholder="Confirme a senha" onChange={e=>setPasswordConfirm(e.target.value)}/>
-                <button disabled={loadingState}  type="submit">Cadastrar</button>
+                <button disabled={loadingState}  type="submit">{!loadingState ? "Cadastrar" : "Aguarde ..."}</button>
             </form>
             <Link to={"/"}>
                 <p>Já tem uma conta? Entre agora!</p>

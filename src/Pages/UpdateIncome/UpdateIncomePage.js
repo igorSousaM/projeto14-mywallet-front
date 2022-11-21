@@ -1,6 +1,6 @@
 import { StyledMain } from "./UpdateIncomeStyle"
 import { RiArrowGoBackFill } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
@@ -10,6 +10,13 @@ export default function UpdateIncomePage({userData}) {
 
     const [value, setValue] = useState(0)
     const [description, setDescription] = useState("")
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    const transactionId = location.state
+    
+
+    console.log(transactionId)
 
     function completeForm(e){
         e.preventDefault()
@@ -24,11 +31,12 @@ export default function UpdateIncomePage({userData}) {
             type: "income"
         }
 
-        axios.put(`http://localhost:5000/transaction/${"preciso doId da transação"}`, body, config)
+        axios.put(`http://localhost:5000/transaction/${transactionId}`, body, config)
         .then(res => {
             console.log(res.data)
             setValue(0)
-            setValue("")
+            setDescription("")
+            navigate("/finances")
         })
         .catch(err=>console.log(err.response.data))
 
