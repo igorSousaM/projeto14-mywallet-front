@@ -1,57 +1,77 @@
-
-import { StyledScreen } from "./FinacesStyle"
+import { StyledScreen } from "./FinacesStyle";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import { IoIosAddCircleOutline } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 
-export default function MainPage({userData}) {
+export default function MainPage({ userData }) {
 
     console.log(userData)
 
-    useEffect(() => {
-    
-        const config = {headers:{Authorization: `Bearer ${userData.token}`}}
+    const config = {
+        headers: { Authorization: `Bearear ${userData.token.token}` },
+      };
 
-        axios.get("http://localhost:5000/session",config)
-        .then( )
-        .catch(err=>{
-            console.log(err.response.data)
-        })
+  useEffect(() => {
 
-    }, []);
+    axios
+      .get("http://localhost:5000/transaction", config)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err.response.data);
+      });
+  }, []);
 
-    return (
-        <StyledScreen>
-            <header>
-                <h1>Olá, Fulano</h1>
-                <div>
-                    <Link to="/">
-                        <RiLogoutBoxRLine size={"24px"} color="white" />
-                    </Link>
-                </div>
-            </header>
+  const navigate = useNavigate()
 
-            <main>
-                <p>olá</p>
-            </main>
+  function logOut(e) {
+    e.preventDefault()
+    e.stopPropagation()
 
-            <footer>
-                <button>
-                    <IoIosAddCircleOutline size={"22px"} color="white" />
-                    <Link to="/income">
-                        <p>Nova entrada</p>
-                    </Link>
-                </button>
-                <button>
-                    <IoIosAddCircleOutline size={"22px"} color="white" />
-                    <Link to="/outcome">
-                        <p>Nova saída</p>
-                    </Link>
-                </button>
-            </footer>
-        </StyledScreen>
-    )
-};
+    const id = userData.user._id
 
+    axios.delete(`https://localhost:5000/session/${id}`,config)
+    .then(res=>{
+        console.log(res.data)
+    }).catch(err=> {
+        console.log(err)
+    })
+
+    navigate("/")
+  }
+
+  function addTransaction(str){
+    navigate(`/${str}`)
+  }
+
+  return (
+    <StyledScreen>
+      <header>
+        <h1>Olá, {userData.user.name}</h1>
+        <div onClick={logOut}>
+          <RiLogoutBoxRLine size={"24px"} color="white" />
+        </div>
+      </header>
+
+      <main>
+        <p>olá</p>
+      </main>
+
+      <footer>
+        <button onClick={()=>addTransaction("income")}>
+          <IoIosAddCircleOutline size={"22px"} color="white" />
+            <p>Nova entrada</p>
+          
+        </button>
+        <button onClick={()=>addTransaction("outcome")}>
+          <IoIosAddCircleOutline size={"22px"} color="white" />
+            <p>Nova saída</p>
+          
+        </button>
+      </footer>
+    </StyledScreen>
+  );
+}
