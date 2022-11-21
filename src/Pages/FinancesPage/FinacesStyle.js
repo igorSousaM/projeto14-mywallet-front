@@ -8,11 +8,11 @@ align-items: center;
 background-color:purple;
 
 width:100%;
-height: 667px;
+height: 100vh;
 
 header{
 
-    width: 100%;
+    width: 326px;
     
     margin: 25px;
 
@@ -21,8 +21,6 @@ header{
     justify-content:space-between;
 
     h1{
-        margin-left: 25px;
-
         font-family: 'Raleway',sans-serif;
         font-style: normal;
         font-weight: 700;
@@ -32,9 +30,6 @@ header{
         color: #FFFFFF;
     }
 
-    div{
-        margin-right:25px;
-    }
 }
 
 main{
@@ -74,9 +69,8 @@ main{
 }
 
 footer{
+
     width: 326px;
-
-
     display: flex;
     justify-content: space-between;
 

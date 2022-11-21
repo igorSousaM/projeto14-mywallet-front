@@ -7,7 +7,7 @@ export default function Transaction({ transactionInfo, userData }) {
   
 
   const config = {
-    headers: { Authorization: `Bearear ${userData.token.token}` },
+    headers: { Authorization: `Bearer ${userData.token.token}` },
   };
 
   function deleteTransaction(id) {
@@ -74,7 +74,7 @@ const StyledTransaction = styled.div`
 
     color: #000000;
     position: absolute;
-    left: 60px;
+    left: 70px;
   }
 
   .value {

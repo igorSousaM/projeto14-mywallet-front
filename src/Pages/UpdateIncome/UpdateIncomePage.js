@@ -22,7 +22,7 @@ export default function UpdateIncomePage({userData}) {
         e.preventDefault()
 
         const config = {
-            headers: { Authorization: `Bearear ${userData.token.token}` },
+            headers: { Authorization: `Bearer ${userData.token.token}` },
           };
 
         const body = {

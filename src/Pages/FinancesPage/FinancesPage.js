@@ -10,7 +10,7 @@ export default function MainPage({ userData }) {
   const [transactionList, setTransactionList] = useState([]);
 
   const config = {
-    headers: { Authorization: `Bearear ${userData.token.token}` },
+    headers: { Authorization: `Bearer ${userData.token.token}` },
   };
 
   useEffect(() => {

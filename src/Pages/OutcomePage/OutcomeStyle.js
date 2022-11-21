@@ -5,7 +5,7 @@ export const StyledMain = styled.div`
 
   background-color: purple;
   width: 100%;
-  height: 667px;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;

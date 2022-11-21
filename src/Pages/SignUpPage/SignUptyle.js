@@ -7,8 +7,8 @@ export const StyledMain = styled.main`
     align-items: center;
 
     background-color: purple;
-    weight:100%;
-    height: 667px;
+    width:100%;
+    height: 100vh;
 
     h1{
         font-family: 'Saira Stencil One', cursive;
