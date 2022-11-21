@@ -6,6 +6,8 @@ import SignInPage from "./Pages/SingInPage/SignInPage";
 import SignUpPage from "./Pages/SignUpPage/SignUpPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import UpdateOutcomePage from "./Pages/UpdateOutcome/UpdateOutcomePage";
+import UpdateIncomePage from "./Pages/UpdateIncome/UpdateIncomePage"
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
       <Route path="/finances" element={<FinancesPage userData={userData}/>}/>
       <Route path="/income" element={<IncomePage userData={userData}/>}/>
       <Route path="/outcome" element={<OutcomePage userData={userData}/>}/>
+      <Route path="/updateOutcome" element={<UpdateOutcomePage/>}/>
+      <Route path="/updateIncome" element={<UpdateIncomePage/>}/>
     </Routes>
     </BrowserRouter>
   );
