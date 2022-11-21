@@ -18,8 +18,8 @@ function App() {
       <Route path="/" element={<SignInPage setUserData={setUserData}/>}/>
       <Route path="/SignUp" element={<SignUpPage />}/>
       <Route path="/finances" element={<FinancesPage userData={userData}/>}/>
-      <Route path="/income" element={<IncomePage />}/>
-      <Route path="/outcome" element={<OutcomePage />}/>
+      <Route path="/income" element={<IncomePage userData={userData}/>}/>
+      <Route path="/outcome" element={<OutcomePage userData={userData}/>}/>
     </Routes>
     </BrowserRouter>
   );

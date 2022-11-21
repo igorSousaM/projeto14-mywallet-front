@@ -1,7 +1,7 @@
 import { StyledScreen } from "./FinacesStyle";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import { IoIosAddCircleOutline } from "react-icons/io";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 
