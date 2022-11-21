@@ -45,6 +45,32 @@ main{
 
     background-color: #FFFFFF;
     border-radius: 5px;
+
+    position: relative;
+    .overview{
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        position: absolute;
+        left:15px;
+        bottom:10px;
+
+        h1{
+            font-family: 'Raleway',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 20px;
+
+            color: #000000;
+        }
+
+        p{
+            color: ${props=> props.isPositive ? "#03ac00":"#C70000"} ; 
+        }
+    }
 }
 
 footer{
