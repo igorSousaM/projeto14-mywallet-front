@@ -7,7 +7,7 @@ export const StyledMain = styled.main`
     align-items: center;
 
     background-color: purple;
-    weight:100%;
+    width:100%;
     height: 667px;
 
     h1{

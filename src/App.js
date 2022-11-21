@@ -5,16 +5,19 @@ import FinancesPage from "./Pages/FinancesPage/FinancesPage";
 import SignInPage from "./Pages/SingInPage/SignInPage";
 import SignUpPage from "./Pages/SignUpPage/SignUpPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import { useState } from "react";
 
 function App() {
+
+  const [userData, setUserData] = useState({});
+
   return (
     <BrowserRouter>
     <GlobalStyle/>
     <Routes>
-      <Route path="/" element={<SignInPage />}/>
+      <Route path="/" element={<SignInPage setUserData={setUserData}/>}/>
       <Route path="/SignUp" element={<SignUpPage />}/>
-      <Route path="/finances" element={<FinancesPage />}/>
+      <Route path="/finances" element={<FinancesPage userData={userData}/>}/>
       <Route path="/income" element={<IncomePage />}/>
       <Route path="/outcome" element={<OutcomePage />}/>
     </Routes>

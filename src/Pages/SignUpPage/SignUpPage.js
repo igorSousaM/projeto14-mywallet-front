@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { StyledMain } from "./SignUptyle";
-
+import axios from "axios";
 
 export default function SignUpPage() {
 
@@ -9,6 +9,7 @@ export default function SignUpPage() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("") 
     const [passwordConfirm, setPasswordConfirm] = useState("")
+
     const navigate = useNavigate()
 
     function createAccount(e){
@@ -22,8 +23,14 @@ export default function SignUpPage() {
             password
         }
 
-        console.log(body)
-        navigate("/")
+        axios.post("http://localhost:5000/sign-up",body)
+        .then(()=>{
+            navigate("/")
+        }).catch((err)=>{
+            console.log(err)
+            alert("preencha os campos de acordo")
+        })
+
     }
 
 
@@ -31,10 +38,10 @@ export default function SignUpPage() {
         <StyledMain>
             <h1>MyWallet</h1>
             <form onSubmit={createAccount}>
-                <input required value={name} placeholder="Nome" onChange={e=>setName(e.target.value)}/>
-                <input required value={email} placeholder="E-mail" onChange={e=>setEmail(e.target.value)}/>
-                <input required value={password} placeholder="Senha" onChange={e=>setPassword(e.target.value)}/>
-                <input required value={passwordConfirm} placeholder="Confirme a senha" onChange={e=>setPasswordConfirm(e.target.value)}/>
+                <input required type="text" value={name} placeholder="Nome" onChange={e=>setName(e.target.value)}/>
+                <input required type="email" value={email} placeholder="E-mail" onChange={e=>setEmail(e.target.value)}/>
+                <input required type="password" value={password} placeholder="Senha" onChange={e=>setPassword(e.target.value)}/>
+                <input required type="password" value={passwordConfirm} placeholder="Confirme a senha" onChange={e=>setPasswordConfirm(e.target.value)}/>
                 <button type="submit">Cadastrar</button>
             </form>
             <Link to={"/"}>
