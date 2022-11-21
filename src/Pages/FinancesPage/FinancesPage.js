@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 
-export default function MainPage(userData) {
+export default function MainPage({userData}) {
 
     console.log(userData)
 
